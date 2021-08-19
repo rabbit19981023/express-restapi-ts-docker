@@ -1,3 +1,3 @@
-import movieModel, { MovieDoc } from './movie.model'
+import movieModel, { Movie, MovieDoc } from './movie.model'
 
-export { movieModel, MovieDoc }
+export { movieModel, Movie, MovieDoc }

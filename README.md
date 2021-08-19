@@ -98,6 +98,20 @@ This is a Headless RESTful API implemented by Express.js written in TypeScript, 
 
     - `--detach, -d` : run services in background
 
-### Check the Result
+## Send requests to server
 
-- Just check the API-endpoint in browser : `http://localhost:3000/v1/api/movies`
+- Create a new movies API:
+
+    ```bash
+    $ curl --request POST --data "name=神隱少女&director=宮騎峻&language=日本語&duration=125" http://localhost:3000/v1/api/movies
+
+    {"status":200,"message":"You have added a new movie successfully!","added_movie":{"_id":"611e611a28c30b0008ca4a59","name":"神隱少女","director":"宮騎峻","language":"日本語","duration":125,"__v":0}}
+    ```
+
+- Get all movies API:
+
+    ```bash
+    $ curl --request GET http://localhost:3000/v1/api/movies
+
+    [{"_id":"611e5d06b7d435000785e83a","name":"天空之城","director":"宮騎峻","language":"日本語","duration":126,"__v":0},{"_id":"611e611a28c30b0008ca4a59","name":"神隱少女","director":"宮騎峻","language":"日本語","duration":125,"__v":0}]
+    ```
