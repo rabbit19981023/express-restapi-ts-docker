@@ -22,9 +22,7 @@ This is a Headless RESTful API implemented by Express.js written in TypeScript, 
 
     ```.env
     NODE_ENV = production
-
     PORT = 3000
-
     MONGODB_URI = <your-mongodb-connect-uri>
     ```
 
