@@ -34,7 +34,7 @@ This is a Headless RESTful API implemented by Express.js written in TypeScript, 
     <your-npm-secret-token>
     ```
 
-### Run the application via Dockerfile
+### 1. Run the application via Dockerfile
 
 1. Building a Docker Image:
 
@@ -43,17 +43,17 @@ This is a Headless RESTful API implemented by Express.js written in TypeScript, 
     $ sudo DOCKER_BUILDKIT=1 docker build -f Dockerfile -t express-restapi-ts:latest --secret id=npmrc,src=./.npmrc --no-cache ./
     ```
 
-Arguments explanation:
+    Arguments explanation:
 
-- `DOCKER_BUILDKIT=1` : enable new `--secret` command line option, it allows us to mount a local file as secret
+    - `DOCKER_BUILDKIT=1` : enable new `--secret` command line option, it allows us to mount a local file as secret
 
-- `--file, -f <file>` : specify which Dockerfile is going to use
+    - `--file, -f <file>` : specify which Dockerfile is going to use
 
-- `--tag, -t <name:tag>` : name this image
+    - `--tag, -t <name:tag>` : name this image
 
-- `--secret id=<alias>,src=<local_file>` : mount a local file as secret (attention : no spaces between "," !!)
+    - `--secret id=<alias>,src=<local_file>` : mount a local file as secret (attention : no spaces between "," !!)
 
-- `--no-cache` : build this image without cached image layers
+    - `--no-cache` : build this image without cached image layers
 
 2. Run a Docker container based on `express-restapi-ts:latest` image:
 
@@ -61,19 +61,19 @@ Arguments explanation:
     $ sudo docker run -d --name express-restapi-ts --env-file ./.env -p 3000:3000 express-restapi-ts:latest
     ```
 
-Arguments explanation:
+    Arguments explanation:
 
-- `--detach, -d` : run container in background and print container ID
+    - `--detach, -d` : run container in background and print container ID
 
-- `--name <name>` : name this container
+    - `--name <name>` : name this container
 
-- `--env, -e <env>` : set environment variable
+    - `--env, -e <env>` : set environment variable
 
-- `--env-file <env_file>` : read in environment variables of a file
+    - `--env-file <env_file>` : read in environment variables of a file
 
-- `--publish, -p <host_port:container_port>` : mapping the PORT between host machine and container
+    - `--publish, -p <host_port:container_port>` : mapping the PORT between host machine and container
 
-### Run the application via Docker-Compose
+### 2. Run the application via Docker-Compose
 
 1. Building a Docker image:
 
@@ -82,11 +82,11 @@ Arguments explanation:
     $ sudo DOCKER_BUILDKIT=1 docker-compose build --no-cache
     ```
 
-Arguments explanation:
+    Arguments explanation:
 
-- `DOCKER_BUILDKIT=1` : enable new `--secret` command line option, it allows us to mount a local file as secret
+    - `DOCKER_BUILDKIT=1` : enable new `--secret` command line option, it allows us to mount a local file as secret
 
-- `--no-cache` : build this image without cached image layers
+    - `--no-cache` : build this image without cached image layers
 
 2. Running Docker Services via Docker-Compose:
 
@@ -94,9 +94,9 @@ Arguments explanation:
     $ sudo docker-compose up -d
     ```
 
-Arguments explanation:
+    Arguments explanation:
 
-- `--detach, -d` : run services in background
+    - `--detach, -d` : run services in background
 
 ### Check the Result
 
