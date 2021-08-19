@@ -1,0 +1,24 @@
+# dependencies
+node_modules
+
+# build-stage files
+build
+
+# git info
+.git
+.gitignore
+README.md
+
+# docker info
+Dockerfile
+.dockerignore
+
+# error logs
+npm-debug.log
+
+# sensitive data
+.env
+.env.example
+.npmrc
+.npmrc.example
+

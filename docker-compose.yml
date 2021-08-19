@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+    app:
+        secrets:
+            - npmrc
+        build:
+            context: ./
+            dockerfile: Dockerfile            
+        env_file:
+            - ./.env
+        ports:
+            - "3000:$PORT"
+        restart: always
+
+secrets:
+    npmrc:
+        file: ./.npmrc

@@ -1,0 +1,10 @@
+# dependencies
+node_modules
+
+# build-stage data
+build
+
+# sensitive data
+.env
+.npmrc
+
