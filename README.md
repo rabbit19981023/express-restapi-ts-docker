@@ -69,7 +69,7 @@ This is a Headless RESTful API implemented by Express.js written in TypeScript, 
 
     - `--env-file <env_file>` : read in environment variables of a file
 
-    - `--publish, -p <host_port:container_port>` : mapping the PORT between host machine and container
+    - `--publish, -p <host_port>:<container_port>` : mapping the PORT between host machine and container
 
 ### 2. Run the application via Docker-Compose
 
