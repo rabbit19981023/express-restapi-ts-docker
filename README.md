@@ -21,9 +21,9 @@ This is a Headless RESTful API implemented by Express.js written in TypeScript, 
 1. Setting your environment variables in `.env` file:
 
     ```.env
-    NODE_ENV = production
-    PORT = 3000
-    MONGODB_URI = <your-mongodb-connect-uri>
+    NODE_ENV=production
+    PORT=3000
+    MONGODB_URI=<your-mongodb-connect-uri>
     ```
 
 2. Setting your npm secret token in `.npmrc` file:
