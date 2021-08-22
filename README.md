@@ -6,7 +6,7 @@ This is a Headless RESTful API implemented by Express.js written in TypeScript, 
 
 - Architecture : MVC-like, RESTful API
 
-- Language : TypeScript
+- Language : Node.js, TypeScript
 
 - Backend : Express.js
 
