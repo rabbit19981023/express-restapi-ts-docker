@@ -1,15 +1,17 @@
+# project info
+README.md
+
 # dependencies
 node_modules
 
 # build-stage files
 build
 
-# git info
+# git
 .git
 .gitignore
-README.md
 
-# docker info
+# docker
 Dockerfile
 .dockerignore
 
@@ -21,4 +23,3 @@ npm-debug.log
 .env.example
 .npmrc
 .npmrc.example
-

@@ -7,4 +7,3 @@ build
 # sensitive data
 .env
 .npmrc
-

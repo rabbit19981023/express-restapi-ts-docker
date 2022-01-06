@@ -1,6 +1,6 @@
 # Express-RESTfulAPI-Typescript-Docker
 
-This is a Headless RESTful API implemented by Express.js written in TypeScript, and bundle of all them into a Docker Image.
+This is a Headless RESTful API implemented by Express.js written in TypeScript, and bundle of all them into a Docker Image for production.
 
 ## Technologies
 
@@ -8,7 +8,7 @@ This is a Headless RESTful API implemented by Express.js written in TypeScript, 
 
 - Language : Node.js, TypeScript
 
-- Backend : Express.js
+- Backend : Express
 
 - Database : MongoDB Atlas (host on cloud)
 
@@ -22,7 +22,7 @@ This is a Headless RESTful API implemented by Express.js written in TypeScript, 
 
     ```.env
     NODE_ENV=production
-    PORT=3000
+    PORT=<server-port>
     MONGODB_URI=<your-mongodb-connect-uri>
     ```
 
@@ -56,10 +56,12 @@ This is a Headless RESTful API implemented by Express.js written in TypeScript, 
 2. Run a Docker container based on `express-restapi-ts:latest` image:
 
     ```bash
-    $ sudo docker run -d --name express-restapi-ts --env-file ./.env -p 3000:3000 express-restapi-ts:latest
+    $ sudo docker run --rm -d --name express-restapi-ts --env-file ./.env -p 80:<server-port> express-restapi-ts:latest
     ```
 
     Arguments explanation:
+
+    - `--rm` : Automatically remove the container when exits it
 
     - `--detach, -d` : run container in background and print container ID
 
@@ -101,15 +103,15 @@ This is a Headless RESTful API implemented by Express.js written in TypeScript, 
 - Create a new movies API:
 
     ```bash
-    $ curl --request POST --data "name=神隱少女&director=宮騎峻&language=日本語&duration=125" http://localhost:3000/v1/api/movies
+    $ curl --request POST --data "name=神隱少女&director=宮騎峻&language=日本語&duration=125" http://localhost/api/v1/movies
 
-    {"status":200,"message":"You have added a new movie successfully!","added_movie":{"_id":"611e611a28c30b0008ca4a59","name":"神隱少女","director":"宮騎峻","language":"日本語","duration":125,"__v":0}}
+    {"status":200,"message":"You have added a new movie successfully!","added_movie":{"_id":"611e611a28c30b0008ca4a59","name":"神隱少女","director":"宮崎駿","language":"日本語","duration":125,"__v":0}}
     ```
 
 - Get all movies API:
 
     ```bash
-    $ curl --request GET http://localhost:3000/v1/api/movies
+    $ curl --request GET http://localhost/api/v1/movies
 
-    [{"_id":"611e5d06b7d435000785e83a","name":"天空之城","director":"宮騎峻","language":"日本語","duration":126,"__v":0},{"_id":"611e611a28c30b0008ca4a59","name":"神隱少女","director":"宮騎峻","language":"日本語","duration":125,"__v":0}]
+    [{"_id":"611e5d06b7d435000785e83a","name":"天空之城","director":"宮騎峻","language":"日本語","duration":126,"__v":0},{"_id":"611e611a28c30b0008ca4a59","name":"神隱少女","director":"宮崎駿","language":"日本語","duration":125,"__v":0}]
     ```
