@@ -1,3 +1,1 @@
-import { Movie, MovieModel } from './movie.model'
-
-export { Movie, MovieModel }
+export { Movie, MovieModel } from './movie'

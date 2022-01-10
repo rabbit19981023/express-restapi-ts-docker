@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
 import db from './db'
-import { apiRoute } from './routes'
+import routes from './routes'
 
 class Server {
   private app: express.Application
@@ -33,7 +33,7 @@ class Server {
   }
 
   private registerRouters(): this {
-    this.app.use('/api/v1', apiRoute)
+    this.app.use('/', routes)
     return this
   }
 

@@ -1,3 +1,3 @@
-import movieController from './movie.controller'
+import movieController from './movie'
 
 export { movieController }
