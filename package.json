@@ -2,7 +2,6 @@
   "name": "express-restapi-ts-docker",
   "version": "1.0.0",
   "description": "starter template for RESTful API with TypeScript and Docker",
-  "main": "server.js",
   "scripts": {
     "build": "./node_modules/typescript/bin/tsc --project ./tsconfig.json",
     "start": "node ./build/server.js",

@@ -16,26 +16,30 @@ const schema = new mongoose.Schema<Movie>({
 
 const model = mongoose.model<Movie>('movie', schema)
 
-const MovieModel = {
-  async getAll(): Promise<Movie[]> {
-    try {
-      const allMovies = await model.find({})
-      return Promise.resolve(allMovies)
-    }
-    catch (err) {
-      return Promise.reject(err)
-    }
-  },
-
-  async addOne(movie: Movie): Promise<Movie> {
-    try {
-      const movieDoc = await new model(movie).save()
-      return Promise.resolve(movieDoc)
-    }
-    catch (err) {
-      return Promise.reject(err)
-    }
+/** MovieModel APIs **/
+const getAll = async (): Promise<Movie[]> => {
+  try {
+    const allMovies = await model.find({})
+    return Promise.resolve(allMovies)
   }
+  catch (err) {
+    return Promise.reject(err)
+  }
+}
+
+const addOne = async (movie: Movie): Promise<Movie> => {
+  try {
+    const movieDoc = await new model(movie).save()
+    return Promise.resolve(movieDoc)
+  }
+  catch (err) {
+    return Promise.reject(err)
+  }
+}
+
+const MovieModel = {
+  getAll,
+  addOne
 }
 
 export { Movie, MovieModel }

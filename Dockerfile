@@ -1,3 +1,4 @@
+# Build Stage
 FROM node:lts AS build
 WORKDIR /usr/src/app
 COPY . .
@@ -5,6 +6,7 @@ RUN --mount=type=secret,mode=0444,id=npmrc,target=/usr/src/app/.npmrc \
     npm ci \
     && NODE_ENV=production npm run build
 
+# Production Stage
 FROM node:lts-alpine AS production
 RUN apk add dumb-init
 ARG USER=node
